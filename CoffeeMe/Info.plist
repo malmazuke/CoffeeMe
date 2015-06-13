@@ -43,5 +43,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>FacebookAppID</key>
+	<string>400019043523794</string>
+	<key>FacebookDisplayName</key>
+	<string>KaffeeMe</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>fb400019043523794</string>
+		</dict>
+	</array>
 </dict>
 </plist>
