@@ -5,6 +5,7 @@ use_frameworks!
 target 'CoffeeMe' do
   pod 'AFNetworking', '~> 2.5'
   pod 'FBSDKCoreKit', '~> 4.2'
+  pod 'FBSDKLoginKit', '~> 4.2'
   pod 'OCMock', '~> 3.1'
   pod 'Mantle', '~> 2.0'
   pod 'JazzHands', '~> 0.2'
