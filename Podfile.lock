@@ -35,6 +35,21 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.2.0)
+  - FBSDKCoreKit (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.2.0)
+    - FBSDKCoreKit/no-arc (= 4.2.0)
+  - FBSDKCoreKit/arc (4.2.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.2.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
   - JazzHands (0.2.1)
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
@@ -47,6 +62,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - BlocksKit (~> 2.2)
+  - FBSDKCoreKit (~> 4.2)
   - JazzHands (~> 0.2)
   - Mantle (~> 2.0)
   - OCMock (~> 3.1)
@@ -57,6 +73,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  FBSDKCoreKit: 84b3616a361801f190e43a9909caead7bb6087c7
   JazzHands: d2343c3f2f9d70598d0cad8f521ce3893842a44a
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
