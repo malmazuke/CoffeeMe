@@ -14,6 +14,7 @@
 		666B6C031B2BFFB00094A672 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C021B2BFFB00094A672 /* Images.xcassets */; };
 		666B6C061B2BFFB00094A672 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C041B2BFFB00094A672 /* LaunchScreen.xib */; };
 		666B6C121B2BFFB00094A672 /* CoffeeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */; };
+		A0BE4365F9A812376CB4CE9A /* Pods_CoffeeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DDB0D2445B1916AF2A8C4 /* Pods_CoffeeMe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D806C8403BE9D00EC05B73B /* Pods-CoffeeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe.release.xcconfig"; sourceTree = "<group>"; };
+		5E9A560CC63B724863103AB7 /* Pods-CoffeeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe.debug.xcconfig"; sourceTree = "<group>"; };
 		666B6BF21B2BFFB00094A672 /* CoffeeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6BF61B2BFFB00094A672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666B6BF71B2BFFB00094A672 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		666B6C0B1B2BFFB00094A672 /* CoffeeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6C101B2BFFB00094A672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMeTests.m; sourceTree = "<group>"; };
+		979DDB0D2445B1916AF2A8C4 /* Pods_CoffeeMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BE4365F9A812376CB4CE9A /* Pods_CoffeeMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20F71E1406663ADDBD4B870D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E9A560CC63B724863103AB7 /* Pods-CoffeeMe.debug.xcconfig */,
+				2D806C8403BE9D00EC05B73B /* Pods-CoffeeMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		666B6BE91B2BFFB00094A672 = {
 			isa = PBXGroup;
 			children = (
 				666B6BF41B2BFFB00094A672 /* CoffeeMe */,
 				666B6C0E1B2BFFB00094A672 /* CoffeeMeTests */,
 				666B6BF31B2BFFB00094A672 /* Products */,
+				20F71E1406663ADDBD4B870D /* Pods */,
+				8C86AA6B8B82B4C72E858BD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +135,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8C86AA6B8B82B4C72E858BD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				979DDB0D2445B1916AF2A8C4 /* Pods_CoffeeMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 666B6C151B2BFFB00094A672 /* Build configuration list for PBXNativeTarget "CoffeeMe" */;
 			buildPhases = (
+				E198A963C559C15C9DDF5BEF /* Check Pods Manifest.lock */,
 				666B6BEE1B2BFFB00094A672 /* Sources */,
 				666B6BEF1B2BFFB00094A672 /* Frameworks */,
 				666B6BF01B2BFFB00094A672 /* Resources */,
+				ECE291CBEBEDB64AE936AB9D /* Embed Pods Frameworks */,
+				4F7D27361AD39ED3EAC4F979 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +240,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F7D27361AD39ED3EAC4F979 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E198A963C559C15C9DDF5BEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE291CBEBEDB64AE936AB9D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		666B6BEE1B2BFFB00094A672 /* Sources */ = {
@@ -347,6 +422,7 @@
 		};
 		666B6C161B2BFFB00094A672 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9A560CC63B724863103AB7 /* Pods-CoffeeMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoffeeMe/Info.plist;
@@ -357,6 +433,7 @@
 		};
 		666B6C171B2BFFB00094A672 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D806C8403BE9D00EC05B73B /* Pods-CoffeeMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CoffeeMe/Info.plist;
@@ -418,6 +495,7 @@
 				666B6C171B2BFFB00094A672 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		666B6C181B2BFFB00094A672 /* Build configuration list for PBXNativeTarget "CoffeeMeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +504,7 @@
 				666B6C1A1B2BFFB00094A672 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
