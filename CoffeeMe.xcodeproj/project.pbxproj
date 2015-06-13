@@ -14,6 +14,7 @@
 		666B6C031B2BFFB00094A672 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C021B2BFFB00094A672 /* Images.xcassets */; };
 		666B6C061B2BFFB00094A672 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C041B2BFFB00094A672 /* LaunchScreen.xib */; };
 		666B6C121B2BFFB00094A672 /* CoffeeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */; };
+		666B6C1D1B2C21830094A672 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6C1C1B2C21830094A672 /* LoginViewController.m */; };
 		A0BE4365F9A812376CB4CE9A /* Pods_CoffeeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 979DDB0D2445B1916AF2A8C4 /* Pods_CoffeeMe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		666B6C0B1B2BFFB00094A672 /* CoffeeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6C101B2BFFB00094A672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMeTests.m; sourceTree = "<group>"; };
+		666B6C1B1B2C21830094A672 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		666B6C1C1B2C21830094A672 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		979DDB0D2445B1916AF2A8C4 /* Pods_CoffeeMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,8 @@
 				666B6BFA1B2BFFB00094A672 /* AppDelegate.m */,
 				666B6BFC1B2BFFB00094A672 /* ViewController.h */,
 				666B6BFD1B2BFFB00094A672 /* ViewController.m */,
+				666B6C1B1B2C21830094A672 /* LoginViewController.h */,
+				666B6C1C1B2C21830094A672 /* LoginViewController.m */,
 				666B6BFF1B2BFFB00094A672 /* Main.storyboard */,
 				666B6C021B2BFFB00094A672 /* Images.xcassets */,
 				666B6C041B2BFFB00094A672 /* LaunchScreen.xib */,
@@ -294,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666B6C1D1B2C21830094A672 /* LoginViewController.m in Sources */,
 				666B6BFE1B2BFFB00094A672 /* ViewController.m in Sources */,
 				666B6BFB1B2BFFB00094A672 /* AppDelegate.m in Sources */,
 				666B6BF81B2BFFB00094A672 /* main.m in Sources */,
