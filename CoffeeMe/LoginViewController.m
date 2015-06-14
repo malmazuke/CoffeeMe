@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Mark Feaver. All rights reserved.
 //
 
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
@@ -22,6 +24,27 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)tappedLogin:(UIButton *)sender {
+    [self mgf_loginWithFacebook];
+}
+
+- (void)mgf_loginWithFacebook {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            // Process error
+        } else if (result.isCancelled) {
+            // Handle cancellations
+        } else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if ([result.grantedPermissions containsObject:@"email"]) {
+            // Do work
+            }
+        }
+    }];
 }
 
 /*
