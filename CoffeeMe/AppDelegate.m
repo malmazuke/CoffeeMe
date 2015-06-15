@@ -17,15 +17,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // This needs to happen first, so we get a currentAccessToken
     BOOL fbDidFinish = [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    [self mgf_setupFacebook];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [self mgf_initializeMainStoryboard];
-    if (![self mgf_isFBAuthenticated]) {
+    if (![[AppDelegate sharedDelegate] isFBAuthenticated]) {
         [self showLoginScreen];
     }
 
@@ -44,11 +44,19 @@
                                                        annotation:annotation];
 }
 
++ (AppDelegate *)sharedDelegate {
+    return [[UIApplication sharedApplication] delegate];
+}
+
 - (void)showLoginScreen {
     dispatch_async(dispatch_get_main_queue(), ^{
         LoginViewController *loginVC = [LoginViewController new];
         [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
     });
+}
+
+- (BOOL)isFBAuthenticated {
+    return [FBSDKAccessToken currentAccessToken];
 }
 
 - (void)mgf_initializeMainStoryboard {
@@ -61,8 +69,8 @@
     self.window.rootViewController = initVC;
 }
 
-- (BOOL)mgf_isFBAuthenticated {
-    return [FBSDKAccessToken currentAccessToken];
+- (void)mgf_setupFacebook {
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
 }
 
 @end

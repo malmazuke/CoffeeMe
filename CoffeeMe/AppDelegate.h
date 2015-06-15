@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (AppDelegate *)sharedDelegate;
+- (void)showLoginScreen;
+- (BOOL)isFBAuthenticated;
 
 @end
 

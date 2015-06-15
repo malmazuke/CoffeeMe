@@ -16,8 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-8i-WQy">
-                                <rect key="frame" x="247" y="289" width="107" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5jt-ol-VK9">
+                                <rect key="frame" x="236" y="236" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="CYo-vT-Z09"/>
+                                    <constraint firstAttribute="height" constant="128" id="g7y-8p-tg0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-8i-WQy">
+                                <rect key="frame" x="247" y="372" width="107" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="IgV-1c-yuD"/>
                                     <constraint firstAttribute="height" constant="21" id="jdI-MH-Au3"/>
@@ -29,11 +36,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="5jt-ol-VK9" secondAttribute="centerX" id="b9l-B4-u9H"/>
+                            <constraint firstItem="t3z-8i-WQy" firstAttribute="top" secondItem="5jt-ol-VK9" secondAttribute="bottom" constant="8" id="dlk-cP-RIR"/>
                             <constraint firstAttribute="centerY" secondItem="t3z-8i-WQy" secondAttribute="centerY" id="n4n-BR-gz3"/>
+                            <constraint firstAttribute="centerY" secondItem="5jt-ol-VK9" secondAttribute="centerY" id="sZZ-ew-zWf"/>
                             <constraint firstAttribute="centerX" secondItem="t3z-8i-WQy" secondAttribute="centerX" id="tiC-eb-jKJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="n4n-BR-gz3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="CoffeeMe" id="Uyk-Ad-Hns"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="5jt-ol-VK9" id="l3x-Ie-uOa"/>
+                        <outlet property="welcomeLabel" destination="t3z-8i-WQy" id="Deo-Ig-9Xf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7y-QV-54t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

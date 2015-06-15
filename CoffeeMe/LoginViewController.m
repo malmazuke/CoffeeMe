@@ -24,7 +24,7 @@
 - (void)mgf_loginWithFacebook {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     FBSDKLoginManager *login = [FBSDKLoginManager new];
-    [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [login logInWithReadPermissions:@[@"public_profile", @"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         [SVProgressHUD dismiss];
         if (error) {
             // TODO: Process error
