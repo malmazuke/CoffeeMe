@@ -9,6 +9,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // TODO: Manually initialize dashboard storyboard, and determine whether we need to login
+    [self showLoginScreen];
+
     return [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
@@ -49,4 +53,10 @@
                                                 sourceApplication:sourceApplication
                                                        annotation:annotation];
 }
+
+- (void)showLoginScreen {
+    LoginViewController *loginVC = [LoginViewController new];
+    [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
+}
+
 @end

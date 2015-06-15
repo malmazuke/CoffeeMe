@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  DashboardViewController.h
 //  CoffeeMe
 //
 //  Created by Mark Feaver on 15/06/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface DashboardViewController : UIViewController
 
 @end

@@ -46,7 +46,7 @@
             if ([result.grantedPermissions containsObject:@"email"]) {
                 NSLog(@"Did log in with permissions: %@", result.grantedPermissions);
             }
-            // TODO: Notify AWS of log in/creds
+            // TODO: Notify AWS Cognito of log in/creds
             // TODO: Proceed to dashboard
         }
     }];
