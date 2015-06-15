@@ -19,15 +19,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // This needs to happen first, so we get a currentAccessToken
+    BOOL fbDidFinish = [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [self mgf_initializeMainStoryboard];
-    if (![self mgf_isAuthenticated]) {
+    if (![self mgf_isFBAuthenticated]) {
         [self showLoginScreen];
     }
 
     [self.window makeKeyAndVisible];
-    return [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    return fbDidFinish;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -58,9 +61,8 @@
     self.window.rootViewController = initVC;
 }
 
-- (BOOL)mgf_isAuthenticated {
-    // TODO: Check if authenticated with FB
-    return NO;
+- (BOOL)mgf_isFBAuthenticated {
+    return [FBSDKAccessToken currentAccessToken];
 }
 
 @end
