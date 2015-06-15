@@ -48,15 +48,15 @@
     return [[UIApplication sharedApplication] delegate];
 }
 
++ (BOOL)isFBAuthenticated {
+    return [FBSDKAccessToken currentAccessToken];
+}
+
 - (void)showLoginScreen {
     dispatch_async(dispatch_get_main_queue(), ^{
         LoginViewController *loginVC = [LoginViewController new];
         [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
     });
-}
-
-+ (BOOL)isFBAuthenticated {
-    return [FBSDKAccessToken currentAccessToken];
 }
 
 - (void)mgf_initializeMainStoryboard {
