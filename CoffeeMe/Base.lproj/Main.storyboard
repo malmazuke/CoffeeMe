@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1qF-Ne-Us6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="N4I-bR-Av0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Dashboard View Controller-->
+        <!--CoffeeMe-->
         <scene sceneID="HZO-OO-JaW">
             <objects>
                 <viewController id="1qF-Ne-Us6" customClass="DashboardViewController" sceneMemberID="viewController">
@@ -15,10 +15,45 @@
                     <view key="view" contentMode="scaleToFill" id="fx8-Py-Jn1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-8i-WQy">
+                                <rect key="frame" x="247" y="289" width="107" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="IgV-1c-yuD"/>
+                                    <constraint firstAttribute="height" constant="21" id="jdI-MH-Au3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="t3z-8i-WQy" secondAttribute="centerY" id="n4n-BR-gz3"/>
+                            <constraint firstAttribute="centerX" secondItem="t3z-8i-WQy" secondAttribute="centerX" id="tiC-eb-jKJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="CoffeeMe" id="Uyk-Ad-Hns"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7y-QV-54t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1371" y="404"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fEL-Bk-gmR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N4I-bR-Av0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9H-Ub-yYi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1qF-Ne-Us6" kind="relationship" relationship="rootViewController" id="U7Z-Ib-itb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1U-B3-EVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="559" y="404"/>
         </scene>
