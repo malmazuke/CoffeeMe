@@ -7,6 +7,7 @@
 //
 
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import "LoginViewController.h"
 
@@ -31,18 +32,22 @@
 }
 
 - (void)mgf_loginWithFacebook {
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    FBSDKLoginManager *login = [FBSDKLoginManager new];
     [login logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        [SVProgressHUD dismiss];
         if (error) {
-            // Process error
+            // TODO: Process error
+            NSLog(@"Error logging into Facebook: %@", error);
         } else if (result.isCancelled) {
-            // Handle cancellations
+            // TODO: Handle cancellations
+            NSLog(@"Facebook log in cancelled");
         } else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
             if ([result.grantedPermissions containsObject:@"email"]) {
-            // Do work
+                NSLog(@"Did log in with permissions: %@", result.grantedPermissions);
             }
+            // TODO: Notify AWS of log in/creds
+            // TODO: Proceed to dashboard
         }
     }];
 }
