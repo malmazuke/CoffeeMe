@@ -25,7 +25,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [self mgf_initializeMainStoryboard];
-    if (![[AppDelegate sharedDelegate] isFBAuthenticated]) {
+    if (![AppDelegate isFBAuthenticated]) {
         [self showLoginScreen];
     }
 
@@ -55,7 +55,7 @@
     });
 }
 
-- (BOOL)isFBAuthenticated {
++ (BOOL)isFBAuthenticated {
     return [FBSDKAccessToken currentAccessToken];
 }
 

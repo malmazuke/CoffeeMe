@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="N4I-bR-Av0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--CoffeeMe-->
@@ -24,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3z-8i-WQy">
-                                <rect key="frame" x="247" y="372" width="107" height="21"/>
+                                <rect key="frame" x="16" y="372" width="568" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="IgV-1c-yuD"/>
                                     <constraint firstAttribute="height" constant="21" id="jdI-MH-Au3"/>
@@ -32,12 +33,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IgV-1c-yuD"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="t3z-8i-WQy" firstAttribute="trailing" secondItem="fx8-Py-Jn1" secondAttribute="trailingMargin" id="3o3-LK-1gZ"/>
                             <constraint firstAttribute="centerX" secondItem="5jt-ol-VK9" secondAttribute="centerX" id="b9l-B4-u9H"/>
                             <constraint firstItem="t3z-8i-WQy" firstAttribute="top" secondItem="5jt-ol-VK9" secondAttribute="bottom" constant="8" id="dlk-cP-RIR"/>
+                            <constraint firstItem="t3z-8i-WQy" firstAttribute="leading" secondItem="fx8-Py-Jn1" secondAttribute="leadingMargin" id="fs2-1G-eJY"/>
                             <constraint firstAttribute="centerY" secondItem="t3z-8i-WQy" secondAttribute="centerY" id="n4n-BR-gz3"/>
                             <constraint firstAttribute="centerY" secondItem="5jt-ol-VK9" secondAttribute="centerY" id="sZZ-ew-zWf"/>
                             <constraint firstAttribute="centerX" secondItem="t3z-8i-WQy" secondAttribute="centerX" id="tiC-eb-jKJ"/>
