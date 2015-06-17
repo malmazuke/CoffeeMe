@@ -14,7 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet FBSDKProfilePictureView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *welcomeLabel;
-@property (strong, nonatomic) FBSDKProfile *fbProfile;
 
 @end
 
@@ -23,20 +22,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mgf_fbAccessTokenDidChange) name:FBSDKAccessTokenDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mgf_fbProfileDidChange:)     name:FBSDKProfileDidChangeNotification     object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mgf_fbAccessTokenDidChange:) name:FBSDKAccessTokenDidChangeNotification object:nil];
     
     [self mgf_refreshDashboard];
 }
 
-- (void)mgf_fbAccessTokenDidChange {
+- (void)mgf_fbProfileDidChange:(NSNotification *)notification {
     [self mgf_refreshDashboard];
+}
+
+- (void)mgf_fbAccessTokenDidChange:(NSNotification *)notification {
+    [self mgf_fbProfileDidChange:nil];
 }
 
 - (void)mgf_refreshDashboard {
-    self.fbProfile = [FBSDKProfile currentProfile];
+    FBSDKProfile *fbProfile = [FBSDKProfile currentProfile];
     
-    if (self.fbProfile) {
-        self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome, %@", @"The dashboard welcome text for a specific user"), self.fbProfile.name];
+    if (fbProfile) {
+        self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome, %@", @"The dashboard welcome text for a specific user"), fbProfile.name];
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Welcome!", @"The default dashboard welcome text");
     }
