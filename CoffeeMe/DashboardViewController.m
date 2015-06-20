@@ -49,6 +49,7 @@
         assert(fbProfile.name);
         assert(fbProfile.userID);
         self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome, %@", @"The dashboard welcome text for a specific user"), fbProfile.name];
+        // TODO: Use FBSDKGraphRequest instead, and cache result
         [self.profileImageView setImageWithURL:[FacebookHelper profileImageURLForProfileId:fbProfile.userID] placeholderImage:[UIImage imageNamed:@"default_profile"]];
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Welcome!", @"The default dashboard welcome text");
