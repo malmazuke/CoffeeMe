@@ -1,5 +1,5 @@
 //
-//  FacebookHelper.h
+//  APIClient.h
 //  CoffeeMe
 //
 //  Created by Mark Feaver on 20/06/15.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FacebookHelper : NSObject
+extern NSString *const FacebookGraphBaseURL;
 
-+ (nonnull NSURL *)profileImageURLForProfileId:(nonnull NSString *)profileId;
+@interface APIClient : NSObject
 
 @end

@@ -14,7 +14,7 @@
 		666B6C031B2BFFB00094A672 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C021B2BFFB00094A672 /* Images.xcassets */; };
 		666B6C061B2BFFB00094A672 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C041B2BFFB00094A672 /* LaunchScreen.xib */; };
 		666B6C121B2BFFB00094A672 /* CoffeeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */; };
-		6674A0F21B353F69008C669B /* FacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6674A0F11B353F69008C669B /* FacebookHelper.m */; };
+		6674A0FF1B355498008C669B /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6674A0FE1B355498008C669B /* APIClient.m */; };
 		66E18A2D1B2E5DC3001A5161 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E18A2C1B2E5DC3001A5161 /* DashboardViewController.m */; };
 		66E18A311B2E5FA4001A5161 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E18A2F1B2E5FA4001A5161 /* LoginViewController.m */; };
 		66E18A321B2E5FA4001A5161 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E18A301B2E5FA4001A5161 /* LoginViewController.xib */; };
@@ -47,8 +47,8 @@
 		666B6C0B1B2BFFB00094A672 /* CoffeeMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6C101B2BFFB00094A672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMeTests.m; sourceTree = "<group>"; };
-		6674A0F01B353F69008C669B /* FacebookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookHelper.h; sourceTree = "<group>"; };
-		6674A0F11B353F69008C669B /* FacebookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookHelper.m; sourceTree = "<group>"; };
+		6674A0FD1B355498008C669B /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		6674A0FE1B355498008C669B /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		66E18A2B1B2E5DC3001A5161 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		66E18A2C1B2E5DC3001A5161 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		66E18A2E1B2E5FA4001A5161 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -110,8 +110,7 @@
 			children = (
 				666B6BF91B2BFFB00094A672 /* AppDelegate.h */,
 				666B6BFA1B2BFFB00094A672 /* AppDelegate.m */,
-				6674A0F01B353F69008C669B /* FacebookHelper.h */,
-				6674A0F11B353F69008C669B /* FacebookHelper.m */,
+				6674A1001B3554C6008C669B /* API */,
 				6674A0EB1B353ECB008C669B /* View Controllers */,
 				666B6BFF1B2BFFB00094A672 /* Main.storyboard */,
 				666B6C021B2BFFB00094A672 /* Images.xcassets */,
@@ -159,6 +158,15 @@
 				66E18A2C1B2E5DC3001A5161 /* DashboardViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6674A1001B3554C6008C669B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6674A0FD1B355498008C669B /* APIClient.h */,
+				6674A0FE1B355498008C669B /* APIClient.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		8C86AA6B8B82B4C72E858BD8 /* Frameworks */ = {
@@ -322,9 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				66E18A2D1B2E5DC3001A5161 /* DashboardViewController.m in Sources */,
+				6674A0FF1B355498008C669B /* APIClient.m in Sources */,
 				666B6BFE1B2BFFB00094A672 /* ViewController.m in Sources */,
 				666B6BFB1B2BFFB00094A672 /* AppDelegate.m in Sources */,
-				6674A0F21B353F69008C669B /* FacebookHelper.m in Sources */,
 				666B6BF81B2BFFB00094A672 /* main.m in Sources */,
 				66E18A311B2E5FA4001A5161 /* LoginViewController.m in Sources */,
 			);

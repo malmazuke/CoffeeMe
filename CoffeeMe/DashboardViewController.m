@@ -9,8 +9,8 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import "APIClient.h"
 #import "DashboardViewController.h"
-#import "FacebookHelper.h"
 
 @interface DashboardViewController ()
 
@@ -49,8 +49,12 @@
         assert(fbProfile.name);
         assert(fbProfile.userID);
         self.welcomeLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Welcome, %@", @"The dashboard welcome text for a specific user"), fbProfile.name];
+        
         // TODO: Use FBSDKGraphRequest instead, and cache result
-        [self.profileImageView setImageWithURL:[FacebookHelper profileImageURLForProfileId:fbProfile.userID] placeholderImage:[UIImage imageNamed:@"default_profile"]];
+        NSString *imagePath = [fbProfile imagePathForPictureMode:FBSDKProfilePictureModeSquare size:self.profileImageView.bounds.size];
+        assert(imagePath.length);
+        NSURL *imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", FacebookGraphBaseURL, imagePath]];
+        [self.profileImageView setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"default_profile"]];
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Welcome!", @"The default dashboard welcome text");
     }
