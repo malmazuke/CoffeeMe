@@ -12,4 +12,9 @@ NSString *const FacebookGraphBaseURL = @"http://graph.facebook.com/";
 
 @implementation APIClient
 
+- (void)createUserWithUserDescriptor:(UserDescriptor *)userDescriptor success:(void (^)(User *user))success failure:(FailureBlock)failure
+{
+    // FIXME: Allow creation of users in API
+}
+
 @end

@@ -15,6 +15,8 @@
 		666B6C061B2BFFB00094A672 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C041B2BFFB00094A672 /* LaunchScreen.xib */; };
 		666B6C121B2BFFB00094A672 /* CoffeeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */; };
 		6674A0FF1B355498008C669B /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6674A0FE1B355498008C669B /* APIClient.m */; };
+		6674A1041B35569F008C669B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6674A1031B35569F008C669B /* User.m */; };
+		6674A1071B3556AF008C669B /* UserDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6674A1061B3556AF008C669B /* UserDescriptor.m */; };
 		66E18A2D1B2E5DC3001A5161 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E18A2C1B2E5DC3001A5161 /* DashboardViewController.m */; };
 		66E18A311B2E5FA4001A5161 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66E18A2F1B2E5FA4001A5161 /* LoginViewController.m */; };
 		66E18A321B2E5FA4001A5161 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66E18A301B2E5FA4001A5161 /* LoginViewController.xib */; };
@@ -49,6 +51,10 @@
 		666B6C111B2BFFB00094A672 /* CoffeeMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoffeeMeTests.m; sourceTree = "<group>"; };
 		6674A0FD1B355498008C669B /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
 		6674A0FE1B355498008C669B /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		6674A1021B35569F008C669B /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6674A1031B35569F008C669B /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6674A1051B3556AF008C669B /* UserDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDescriptor.h; sourceTree = "<group>"; };
+		6674A1061B3556AF008C669B /* UserDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDescriptor.m; sourceTree = "<group>"; };
 		66E18A2B1B2E5DC3001A5161 /* DashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardViewController.h; sourceTree = "<group>"; };
 		66E18A2C1B2E5DC3001A5161 /* DashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardViewController.m; sourceTree = "<group>"; };
 		66E18A2E1B2E5FA4001A5161 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			children = (
 				666B6BF91B2BFFB00094A672 /* AppDelegate.h */,
 				666B6BFA1B2BFFB00094A672 /* AppDelegate.m */,
+				6674A1011B35568A008C669B /* Model */,
 				6674A1001B3554C6008C669B /* API */,
 				6674A0EB1B353ECB008C669B /* View Controllers */,
 				666B6BFF1B2BFFB00094A672 /* Main.storyboard */,
@@ -167,6 +174,17 @@
 				6674A0FE1B355498008C669B /* APIClient.m */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		6674A1011B35568A008C669B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6674A1021B35569F008C669B /* User.h */,
+				6674A1031B35569F008C669B /* User.m */,
+				6674A1051B3556AF008C669B /* UserDescriptor.h */,
+				6674A1061B3556AF008C669B /* UserDescriptor.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		8C86AA6B8B82B4C72E858BD8 /* Frameworks */ = {
@@ -330,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				66E18A2D1B2E5DC3001A5161 /* DashboardViewController.m in Sources */,
+				6674A1071B3556AF008C669B /* UserDescriptor.m in Sources */,
+				6674A1041B35569F008C669B /* User.m in Sources */,
 				6674A0FF1B355498008C669B /* APIClient.m in Sources */,
 				666B6BFE1B2BFFB00094A672 /* ViewController.m in Sources */,
 				666B6BFB1B2BFFB00094A672 /* AppDelegate.m in Sources */,
