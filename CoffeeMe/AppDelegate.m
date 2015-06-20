@@ -8,6 +8,7 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+#import "APIClient.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 
@@ -21,6 +22,9 @@
     // This needs to happen first, so we get a currentAccessToken
     [self mgf_setupFacebook];
     BOOL fbDidFinish = [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    // FIXME: Not ideal, but it'll do for now
+    self.client = [APIClient new];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

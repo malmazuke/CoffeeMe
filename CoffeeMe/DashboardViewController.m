@@ -7,10 +7,14 @@
 //
 
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <BlocksKit/UIAlertView+BlocksKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import "APIClient.h"
+#import "AppDelegate.h"
 #import "DashboardViewController.h"
+#import "User.h"
 
 @interface DashboardViewController ()
 
@@ -59,6 +63,20 @@
     } else {
         self.welcomeLabel.text = NSLocalizedString(@"Welcome!", @"The default dashboard welcome text");
     }
+}
+
+- (IBAction)mgf_testUserFetch:(id)sender {
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
+    [[AppDelegate sharedDelegate].client userWithId:@"10153532525146412" success:^(User *user) {
+        [SVProgressHUD dismiss];
+        NSLog(@"Yay, successfully fetched user: %@", user.name);
+        [UIAlertView bk_showAlertViewWithTitle:@"User details" message:[NSString stringWithFormat:@"ID:%@\nName: %@", user.userId, user.name] cancelButtonTitle:@"Ok" otherButtonTitles:nil handler:nil];
+    } failure:^(NSError *error) {
+        [SVProgressHUD dismiss];
+        NSLog(@"Error: %@", error);
+    }];
+
 }
 
 /*

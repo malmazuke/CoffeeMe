@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface User : NSObject
+typedef NS_ENUM(NSUInteger, UserGender) {
+    UserGenderUnspecified,
+    UserGenderFemale,
+    UserGenderMale,
+};
+
+@interface User : MTLModel <MTLJSONSerializing>
+
+@property (nonatomic, strong, readonly) NSString  *userId;
+@property (nonatomic, strong, readonly) NSString  *name;
+@property (nonatomic, strong, readonly) NSString  *firstName;
+@property (nonatomic, strong, readonly) NSString  *lastName;
+@property (nonatomic, readonly)         UserGender gender;
+@property (nonatomic, strong, readonly) NSDate    *updatedTime;
 
 @end
