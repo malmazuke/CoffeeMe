@@ -27,6 +27,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mgf_fbProfileDidChange:)     name:FBSDKProfileDidChangeNotification     object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mgf_fbAccessTokenDidChange:) name:FBSDKAccessTokenDidChangeNotification object:nil];
     
+    // TODO: Wrap this up in somethin' nice
     CALayer *profileImageLayer = self.profileImageView.layer;
     [profileImageLayer setCornerRadius:profileImageLayer.bounds.size.height/2.0];
     [profileImageLayer setMasksToBounds:YES];
