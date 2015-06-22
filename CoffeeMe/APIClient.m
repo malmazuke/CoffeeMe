@@ -32,6 +32,7 @@ NSString *const FacebookGraphBaseURL = @"http://graph.facebook.com/";
     
     // FIXME: Fix this endpoint in Apiary
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@", BaseURL, UsersEndpoint, @"1"];
+    // TODO: Mantle for serialization
     NSDictionary *params = @{@"name": userDescriptor.name,
                        @"first_name": userDescriptor.firstName,
                         @"last_name": userDescriptor.lastName,

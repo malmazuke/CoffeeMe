@@ -64,7 +64,6 @@
     descriptor.updatedTime = @"2014-11-11T08:40:51.620Z";
     
     [[AppDelegate sharedDelegate].client createUserWithUserDescriptor:descriptor success:success failure:failure];
-    
 }
 
 @end
