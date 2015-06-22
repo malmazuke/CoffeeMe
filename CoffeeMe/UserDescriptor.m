@@ -10,4 +10,6 @@
 
 @implementation UserDescriptor
 
+// TODO: Use Mantle for serialization
+
 @end

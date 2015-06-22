@@ -22,7 +22,33 @@ NSString *const FacebookGraphBaseURL = @"http://graph.facebook.com/";
 @implementation APIClient
 
 - (void)createUserWithUserDescriptor:(UserDescriptor *)userDescriptor success:(void (^)(User *user))success failure:(FailureBlock)failure {
-    // FIXME: Allow creation of users in API
+    assert(userDescriptor);
+    // FIXME: Not all of these will actually be required
+    assert(userDescriptor.name);
+    assert(userDescriptor.firstName);
+    assert(userDescriptor.lastName);
+    assert(userDescriptor.gender);
+    assert(userDescriptor.updatedTime);
+    
+    // FIXME: Fix this endpoint in Apiary
+    NSString *urlString = [NSString stringWithFormat:@"%@%@%@", BaseURL, UsersEndpoint, @"1"];
+    NSDictionary *params = @{@"name": userDescriptor.name,
+                       @"first_name": userDescriptor.firstName,
+                        @"last_name": userDescriptor.lastName,
+                           @"gender": userDescriptor.gender,
+                     @"updated_time": userDescriptor.updatedTime};
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager POST:urlString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        User *user = [MTLJSONAdapter modelOfClass:[User class] fromJSONDictionary:responseObject error:&error];
+        if (!error) success(user);
+        else        failure(error);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 - (void)userWithId:(NSString *)userId success:(void (^)(User *user))success failure:(FailureBlock)failure {

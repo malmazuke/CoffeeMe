@@ -17,6 +17,7 @@ extern NSString *const FacebookGraphBaseURL;
 
 @interface APIClient : NSObject
 
+// TODO: Let's start using nullability quantifiers
 - (void)createUserWithUserDescriptor:(UserDescriptor *)userDescriptor success:(void (^)(User *user))success failure:(FailureBlock)failure;
 // FIXME: This is just for testing that I can actually fetch a user's details
 - (void)userWithId:(NSString *)userId success:(void (^)(User *user))success failure:(FailureBlock)failure;
