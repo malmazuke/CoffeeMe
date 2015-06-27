@@ -10,21 +10,23 @@
 
 #import "APIClient.h"
 #import "AppDelegate.h"
+#import "DashboardViewController.h"
 #import "LoginViewController.h"
+#import "UIViewController+DependencyInjection.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) APIClient *APIclient;
 
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // This needs to happen first, so we get a currentAccessToken
+    // This needs to happen first, so that we get a currentAccessToken
     [self mgf_setupFacebook];
     BOOL fbDidFinish = [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    
-    // FIXME: Not ideal, but it'll do for now
-    self.client = [APIClient new];
+    self.APIclient = [APIClient new];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -59,6 +61,9 @@
 - (void)showLoginScreen {
     dispatch_async(dispatch_get_main_queue(), ^{
         LoginViewController *loginVC = [LoginViewController new];
+        assert(self.window.rootViewController.mgf_APIClient);
+        [loginVC mgf_copyStateFrom:self.window.rootViewController];
+        
         [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
     });
 }
@@ -67,10 +72,16 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     assert(storyboard);
     
-    UIViewController *initVC = [storyboard instantiateInitialViewController];
-    assert(initVC);
+    UINavigationController *navController = [storyboard instantiateInitialViewController];
+    assert(navController && [navController isKindOfClass:[UINavigationController class]]);
+    // FIXME: Can't use mgf_copyStateFrom: here, because obviously AppDelegate isn't a ViewController
+    [navController setMgf_APIClient:self.APIclient];
     
-    self.window.rootViewController = initVC;
+    UIViewController *initVC = navController.topViewController;
+    assert(initVC && [initVC isKindOfClass:[DashboardViewController class]]);
+    [initVC mgf_copyStateFrom:navController];
+    
+    self.window.rootViewController = navController;
 }
 
 - (void)mgf_setupFacebook {

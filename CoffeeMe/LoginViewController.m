@@ -12,6 +12,7 @@
 #import "APIClient.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "UIViewController+DependencyInjection.h"
 #import "User.h"
 #import "UserDescriptor.h"
 
@@ -63,7 +64,8 @@
     descriptor.gender = @"male";
     descriptor.updatedTime = @"2014-11-11T08:40:51.620Z";
     
-    [[AppDelegate sharedDelegate].client createUserWithUserDescriptor:descriptor success:success failure:failure];
+    assert(self.mgf_APIClient);
+    [self.mgf_APIClient createUserWithUserDescriptor:descriptor success:success failure:failure];
 }
 
 @end

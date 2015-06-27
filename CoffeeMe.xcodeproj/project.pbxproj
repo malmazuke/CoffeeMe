@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661588C71B3E516600E36667 /* UIViewController+DependencyInjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 661588C61B3E516600E36667 /* UIViewController+DependencyInjection.m */; };
 		666B6BF81B2BFFB00094A672 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6BF71B2BFFB00094A672 /* main.m */; };
 		666B6BFB1B2BFFB00094A672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6BFA1B2BFFB00094A672 /* AppDelegate.m */; };
-		666B6BFE1B2BFFB00094A672 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666B6BFD1B2BFFB00094A672 /* ViewController.m */; };
 		666B6C011B2BFFB00094A672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666B6BFF1B2BFFB00094A672 /* Main.storyboard */; };
 		666B6C031B2BFFB00094A672 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C021B2BFFB00094A672 /* Images.xcassets */; };
 		666B6C061B2BFFB00094A672 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 666B6C041B2BFFB00094A672 /* LaunchScreen.xib */; };
@@ -36,13 +36,13 @@
 /* Begin PBXFileReference section */
 		2D806C8403BE9D00EC05B73B /* Pods-CoffeeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe.release.xcconfig"; sourceTree = "<group>"; };
 		5E9A560CC63B724863103AB7 /* Pods-CoffeeMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeMe/Pods-CoffeeMe.debug.xcconfig"; sourceTree = "<group>"; };
+		661588C51B3E516600E36667 /* UIViewController+DependencyInjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DependencyInjection.h"; sourceTree = "<group>"; };
+		661588C61B3E516600E36667 /* UIViewController+DependencyInjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DependencyInjection.m"; sourceTree = "<group>"; };
 		666B6BF21B2BFFB00094A672 /* CoffeeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6BF61B2BFFB00094A672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		666B6BF71B2BFFB00094A672 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		666B6BF91B2BFFB00094A672 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		666B6BFA1B2BFFB00094A672 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		666B6BFC1B2BFFB00094A672 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		666B6BFD1B2BFFB00094A672 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		666B6C001B2BFFB00094A672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		666B6C021B2BFFB00094A672 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		666B6C051B2BFFB00094A672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -91,6 +91,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		661588C41B3E515300E36667 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				661588C51B3E516600E36667 /* UIViewController+DependencyInjection.h */,
+				661588C61B3E516600E36667 /* UIViewController+DependencyInjection.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		666B6BE91B2BFFB00094A672 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +126,7 @@
 				666B6BF91B2BFFB00094A672 /* AppDelegate.h */,
 				666B6BFA1B2BFFB00094A672 /* AppDelegate.m */,
 				6674A1011B35568A008C669B /* Model */,
+				661588C41B3E515300E36667 /* Categories */,
 				6674A1001B3554C6008C669B /* API */,
 				6674A0EB1B353ECB008C669B /* View Controllers */,
 				666B6BFF1B2BFFB00094A672 /* Main.storyboard */,
@@ -156,8 +166,6 @@
 		6674A0EB1B353ECB008C669B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				666B6BFC1B2BFFB00094A672 /* ViewController.h */,
-				666B6BFD1B2BFFB00094A672 /* ViewController.m */,
 				66E18A2E1B2E5FA4001A5161 /* LoginViewController.h */,
 				66E18A2F1B2E5FA4001A5161 /* LoginViewController.m */,
 				66E18A301B2E5FA4001A5161 /* LoginViewController.xib */,
@@ -351,7 +359,7 @@
 				6674A1071B3556AF008C669B /* UserDescriptor.m in Sources */,
 				6674A1041B35569F008C669B /* User.m in Sources */,
 				6674A0FF1B355498008C669B /* APIClient.m in Sources */,
-				666B6BFE1B2BFFB00094A672 /* ViewController.m in Sources */,
+				661588C71B3E516600E36667 /* UIViewController+DependencyInjection.m in Sources */,
 				666B6BFB1B2BFFB00094A672 /* AppDelegate.m in Sources */,
 				666B6BF81B2BFFB00094A672 /* main.m in Sources */,
 				66E18A311B2E5FA4001A5161 /* LoginViewController.m in Sources */,

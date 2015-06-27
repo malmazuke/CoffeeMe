@@ -14,6 +14,7 @@
 #import "APIClient.h"
 #import "AppDelegate.h"
 #import "DashboardViewController.h"
+#import "UIViewController+DependencyInjection.h"
 #import "User.h"
 
 @interface DashboardViewController ()
@@ -68,7 +69,8 @@
 - (IBAction)mgf_testUserFetch:(id)sender {
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
-    [[AppDelegate sharedDelegate].client userWithId:@"10153532525146412" success:^(User *user) {
+    assert(self.mgf_APIClient);
+    [self.mgf_APIClient userWithId:@"10153532525146412" success:^(User *user) {
         [SVProgressHUD dismiss];
         NSLog(@"Yay, successfully fetched user: %@", user.name);
         [UIAlertView bk_showAlertViewWithTitle:@"User details" message:[NSString stringWithFormat:@"ID:%@\nName: %@", user.userId, user.name] cancelButtonTitle:@"Ok" otherButtonTitles:nil handler:nil];
@@ -76,17 +78,6 @@
         [SVProgressHUD dismiss];
         NSLog(@"Error: %@", error);
     }];
-
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
