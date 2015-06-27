@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Mark Feaver. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import <Mantle/Mantle.h>
 
 typedef NS_ENUM(NSUInteger, UserGender) {
