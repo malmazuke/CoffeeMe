@@ -28,6 +28,8 @@ NSString *const FacebookGraphBaseURL = @"http://graph.facebook.com/";
     assert(userDescriptor.firstName);
     assert(userDescriptor.lastName);
     assert(userDescriptor.gender);
+    assert(userDescriptor.age);
+    assert(userDescriptor.facebookId);
     assert(userDescriptor.updatedTime);
     
     // FIXME: Fix this endpoint in Apiary
@@ -37,6 +39,8 @@ NSString *const FacebookGraphBaseURL = @"http://graph.facebook.com/";
                        @"first_name": userDescriptor.firstName,
                         @"last_name": userDescriptor.lastName,
                            @"gender": userDescriptor.gender,
+                              @"age": [NSNumber numberWithInteger:userDescriptor.age],
+                      @"facebook_id": userDescriptor.facebookId,
                      @"updated_time": userDescriptor.updatedTime};
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

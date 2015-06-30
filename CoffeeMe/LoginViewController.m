@@ -62,6 +62,8 @@
     descriptor.firstName = @"Mark";
     descriptor.lastName = @"Feaver";
     descriptor.gender = @"male";
+    descriptor.age = 29;
+    descriptor.facebookId = @"10153532525146412";
     descriptor.updatedTime = @"2014-11-11T08:40:51.620Z";
     
     assert(self.mgf_APIClient);

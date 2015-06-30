@@ -23,6 +23,8 @@ typedef NS_ENUM(NSUInteger, UserGender) {
 @property (nonatomic, strong, readonly) NSString  *firstName;
 @property (nonatomic, strong, readonly) NSString  *lastName;
 @property (nonatomic, readonly)         UserGender gender;
+@property (nonatomic, readonly)         NSInteger  age;
+@property (nonatomic, strong, readonly) NSString  *facebookId;
 @property (nonatomic, strong, readonly) NSDate    *updatedTime;
 
 @end

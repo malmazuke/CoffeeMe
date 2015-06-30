@@ -13,7 +13,9 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
-@property (nonatomic)         NSString *gender;
+@property (nonatomic, strong) NSString *gender;
+@property (nonatomic)         NSInteger age;
+@property (nonatomic, strong) NSString *facebookId;
 // FIXME: Let's make this an NSDate
 @property (nonatomic, strong) NSString *updatedTime;
 
